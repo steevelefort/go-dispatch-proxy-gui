@@ -1,0 +1,25 @@
+{
+  "name": "Go Dispatch Proxy GUI",
+  "version": "1.0.0",
+  "description": "A simple GUI for Go Dispatch Proxy",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "repository": "https://github.com/steevelefort/go-dispatch-proxy-gui",
+  "keywords": [
+    "go",
+    "dispatch",
+    "proxy",
+    "GUI"
+  ],
+  "author": "Steeve Lefort",
+  "license": "CC0-1.0",
+  "devDependencies": {
+    "electron": "^8.2.0",
+    "electron-reload": "^1.5.0"
+  },
+  "dependencies": {
+    "vue": "^2.6.11"
+  }
+}

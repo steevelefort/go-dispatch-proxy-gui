@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+  <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'"> -->
+  <!-- <meta http-equiv="X-Content-Security-Policy" content="default-src 'self'; script-src 'self'"> -->
+  <title>Go Dispatch Proxy GUI</title>
+  <!-- <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css"> -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <main id="app">
+    <ul v-bind:class="{'item-list':true,'item-disabled':isRunning}">
+      <li class="item-heading">
+        <div>Network name & adress</div>
+        <div class="link" @click="list">🗘 refresh</div>
+        <div>Contention ratio</div>
+      </li>
+      <li v-for="adress in adresses" v-if="adress.exists" v-bind:class="{'item':true,'item-disabled':!adress.isOn,'success':adress.isLoading}">
+        <div>
+          <input type="checkbox" class="form-check-input" v-model="adress.isOn" :disabled="isRunning">
+          <span class="title">{{adress.name}}</span>
+          <span>({{adress.ip}})</span>
+        </div>
+        <div>
+          <input type="number" v-model="adress.ratio" min="1" max="10" class="form-control d-inline-block" :disabled="isRunning">
+        </div>
+      </li>
+    </ul>
+
+    <button v-if="!isRunning" class="primary" @click="run">▶ Run Go Dispatch Proxy</button>
+    <button v-if="isRunning"  class="danger" @click="stop">■ Stop Go Dispatch Proxy</button>
+
+    <div class="text-center">
+      <input type="checkbox" v-model="autostart" @change="save"> launch GoDispatchProxy at application startup
+    </div>
+
+    <div class="logs" ref="logs">
+      <p v-for="log in logs" v-bind:class="{'log':true,'info':log.type=='info','error':log.type=='error'}" >{{log.message}}</p>
+    </div>
+
+  </main>
+  <!-- You can also require other files to run in this process -->
+  <script src="./renderer.js"></script>
+</body>
+
+</html>
