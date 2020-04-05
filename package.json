@@ -14,7 +14,7 @@
     "GUI"
   ],
   "author": "Steeve Lefort",
-  "license": "CC0-1.0",
+  "license": "MIT",
   "devDependencies": {
     "electron": "^8.2.0",
     "electron-reload": "^1.5.0"
