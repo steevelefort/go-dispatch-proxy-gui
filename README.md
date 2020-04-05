@@ -8,9 +8,9 @@ Please, visit : [https://github.com/extremecoders-re/go-dispatch-proxy](https://
 
 ## Dependencies
 
-go-dispatch-proxy.exe binary
-electron
-optional : electron-packager (to make a standalone .exe)
+- go-dispatch-proxy.exe binary
+- electron
+- optional : electron-packager (to make a standalone .exe)
 
 ## To Use
 
