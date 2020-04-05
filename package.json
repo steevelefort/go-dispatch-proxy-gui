@@ -1,5 +1,5 @@
 {
-  "name": "Go Dispatch Proxy GUI",
+  "name": "go-dispatch-proxy-gui",
   "version": "1.0.0",
   "description": "A simple GUI for Go Dispatch Proxy",
   "main": "main.js",
